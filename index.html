@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="index.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Sachin's view on how COVID-19 impacted the world!"
+    />
+    <meta charset="utf-8" />
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="index.js"></script>
+    <title>Covid-19 Impact</title>
+    <!--Linking google fonts for better looks-->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Josefin Sans"
+    />
+    <!--Linking google icons for the span navigation drop down icon-->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+  </head>
+
+  <body>
+    <header>
+      <div class="covid">COVID-19</div>
+      <span class="material-symbols-outlined"> menu </span>
+      <div id="nav-bar" class="nav-bar">
+        <ul class="nav-links">
+          <li><a id="sec1" href="#section1">Home</a></li>
+          <li><a id="sec2" href="#section2">Impact</a></li>
+          <li><a id="sec3" href="#section3">Country</a></li>
+          <li><a id="sec4" href="#section4">Vaccinations</a></li>
+          <li><a id="sec5" href="#section5">About</a></li>
+        </ul>
+      </div>
+    </header>
+
+    <div id="full-body">
+      <div id="section1" class="title-page cover">
+        <div class="cover-items">
+          <h1>Coronavirus</h1>
+          <p>
+            The COVID-19 or Coronavirus pandemic is an ongoing global pandemic
+            of the coronavirus disease which is an infectious respiratory
+            illness caused by SARS-CoV-2 virus.
+          </p>
+          <a id="gotosection2" href="#section2"
+            >See how it impacted the world</a
+          >
+        </div>
+      </div>
+      <div
+        id="section2"
+        class="alpha"
+        style="text-align: center; padding-top: 95px !important"
+      >
+        <div
+          id="dataSelectChartName"
+          class="headingText"
+          style="margin-bottom: 30px"
+        >
+          Impact of COVID-19 on the World
+        </div>
+        <div id="divMapAndBar" class="divMapAndBar" style="position: relative">
+          <div class="mainMapAndLock">
+            <div class="chartName">World Map of COVID-19 Cases</div>
+            <svg id="mainMap" class="map" width="1000" height="670"></svg>
+            <div
+              style="display: flex; flex-direction: row; align-items: center"
+            >
+              <a id="lockButton" class="mapButtons">Enable Zoom </a>
+              <a id="brushButton" class="mapButtons">Enable Brushing </a>
+              <a id="disableButton" class="mapButtons">Disable Both </a>
+            </div>
+          </div>
+          <div id="continentAndCountry" width="300" class="continentAndCountry">
+            <div class="chartName">
+              Total Cumulative COVID-19 Cases by Continent
+            </div>
+            <svg
+              id="continentBarChart"
+              width="635"
+              height="320"
+              class="item"
+            ></svg>
+            <div class="chartName">New Daily COVID-19 Cases by Continent</div>
+            <svg
+              id="continentAreaLineChart"
+              width="635"
+              height="320"
+              class="item"
+            ></svg>
+          </div>
+        </div>
+      </div>
+      <div id="section3" class="gamma" style="padding-top: 95px !important">
+        <div id="dataSelectChartName" class="headingText">
+          Exploring Inequality and COVID-19
+        </div>
+        <div class="comparisonContainer">
+          <div class="divCompare">
+            <div id="dataSelectChartName" class="chartName">
+              COVID-19 Cases vs GDP for Top and Bottom Countries
+            </div>
+            <svg
+              id="selectTopBottomCountry"
+              width="600"
+              height="320"
+              class="itemCaseComparisonTopBottom"
+            ></svg>
+            <div class="dataSelectionLink">
+              <div class="chartName">Sort data by-></div>
+              <a id="gdp" class="dataSelect">GDP</a>
+              <a id="populationDensity" class="dataSelect"
+                >Population Density</a
+              >
+            </div>
+            <div class="chartName">
+              Global COVID-19 and GDP Correlation Plot
+            </div>
+            <svg
+              id="clusterPlot"
+              width="600"
+              height="320"
+              class="itemCaseComparisonTopBottom"
+              style="position: relative"
+            ></svg>
+            <div class="dataSelectionLink">
+              <a id="clusterButton" class="dataSelect">Apply Clustering</a>
+            </div>
+          </div>
+          <div class="caseComparison">
+            <div
+              style="display: flex; flex-direction: column"
+              class="increaseDecreaseCountry"
+            >
+              <a
+                id="increase"
+                class="increaseDecrease"
+                title="Add two countries"
+                >↑</a
+              >
+              <a
+                id="decrease"
+                class="increaseDecrease"
+                title="Remove two countries"
+                >↓
+              </a>
+            </div>
+          </div>
+          <div id="caseDeathDiv" class="caseComparison">
+            <div class="chartName">New Daily COVID-19 Cases per million</div>
+            <svg
+              id="newCaseLine"
+              width="700"
+              height="230"
+              class="itemCaseComparison"
+            ></svg>
+            <div class="chartName">New Daily COVID-19 Deaths per million</div>
+            <svg
+              id="newDeathLine"
+              width="700"
+              height="230"
+              class="itemCaseComparison"
+            ></svg>
+            <div class="chartName">Stringency Index of Countries by date</div>
+            <svg
+              id="stringencyLine"
+              width="700"
+              height="230"
+              class="itemCaseComparison"
+            ></svg>
+          </div>
+        </div>
+      </div>
+      <div id="section4" class="alpha" style="padding-top: 95px !important">
+        <div id="dataSelectChartName" class="headingText">
+          Global Vaccination Status
+        </div>
+        <div class="chartName" style="margin-top: 50px">
+          Pie Chart of COVID-19 Vaccination Coverage
+        </div>
+        <div style="display: flex; flex-direction: column; align-items: center">
+          <div
+            id="encloseVacPie"
+            class="vaccineComparison"
+            style="align-items: center; display: flex; flex-direction: row"
+          >
+            <svg id="vacPie" width="300" height="220"></svg>
+            <div style="align-items: center; color: black; padding-right: 10px">
+              <div style="display: flex; flex-direction: row">
+                <svg width="10" height="10">
+                  <rect width="10" height="10" style="fill: green" />
+                </svg>
+                <p>&nbsp; People Vaccinated&nbsp; ->&nbsp;</p>
+                <p id="peopleVaccinated"></p>
+              </div>
+              <div style="display: flex; flex-direction: row">
+                <svg width="10" height="10">
+                  <rect width="10" height="10" style="fill: steelblue" />
+                </svg>
+                <p>&nbsp; Booster Shots&nbsp; ->&nbsp;</p>
+                <p id="boosterShots"></p>
+              </div>
+              <div style="display: flex; flex-direction: row">
+                <svg width="10" height="10">
+                  <rect width="10" height="10" style="fill: red" />
+                </svg>
+                <p>&nbsp; Total Cases&nbsp; ->&nbsp;</p>
+                <p id="totalCases"></p>
+              </div>
+              <div style="display: flex; flex-direction: row">
+                <svg width="10" height="10">
+                  <rect width="10" height="10" style="fill: orange" />
+                </svg>
+                <p>&nbsp; Total Deaths&nbsp; ->&nbsp;</p>
+                <p id="totalDeaths"></p>
+              </div>
+              <div style="display: flex; flex-direction: row">
+                <svg width="10" height="10">
+                  <rect width="10" height="10" style="fill: lightgrey" />
+                </svg>
+                <p>&nbsp; Total Unaffected&nbsp; ->&nbsp;</p>
+                <p id="totalUnaffected"></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="vaccineContainer">
+            <div style="display: flex; flex-direction: column">
+              <div class="chartName" style="margin-top: 20px">
+                Trends in COVID-19 Vaccinations, Cases, and Deaths
+              </div>
+              <div id="caseDeathDiv" class="vaccinationStatus">
+                <svg
+                  id="vacLine"
+                  width="700"
+                  height="390"
+                  class="vaccineComparison"
+                ></svg>
+              </div>
+            </div>
+            <div style="display: flex; flex-direction: column">
+              <div class="chartName" style="margin-top: 20px">
+                Trends in COVID-19 Booster Shots, Cases, and Deaths
+              </div>
+              <div id="caseDeathDiv" class="vaccinationStatus">
+                <svg
+                  id="boosLine"
+                  width="700"
+                  height="390"
+                  class="vaccineComparison"
+                ></svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        id="section5"
+        class="gamma"
+        style="background-color: black; color: white"
+      >
+        <div style="display: flex; flex-direction: column">
+          <h1 style="padding-bottom: 10px">About me</h1>
+          <div style="display: flex; flex-direction: column; text-align: left">
+            <p>Name : Sachin Sasidharan Nair</p>
+            <p>Student ID: H00422359</p>
+            <p>Course: MSc Data Science</p>
+            <p>Intake & Place: January 2023, Edinburgh</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

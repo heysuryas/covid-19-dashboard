@@ -1,0 +1,462 @@
+/*
+This is an External Stylesheet.
+*/
+
+
+ /* Setting CSS Values for the document. */
+ * {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  font-family: "Josefin Sans";
+  box-sizing: border-box;
+}
+/* This enables smooth scrolling when the links are clicked. */
+.smooth-scroll {
+  scroll-behavior: smooth;
+}
+/* This disables the menu to prevent user from clicking it when visiting the website with ample screen width. */
+span {
+  display: none !important;
+}
+
+body {
+  background-color: white;
+}
+
+/* The header encloses the navigation bar*/
+header {
+  width: 100%;
+  height: 80px;
+  background-color: black;
+  display: flex;
+  z-index: 100;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 100px;
+  position: fixed;
+  transition: 0.5s;
+}
+
+/* This is the main Coronavirus text. */
+.covid {
+  font-size: 29px;
+  font-weight: 400;
+  color: white;
+}
+
+/* Setting navigation bar css values. */
+.nav-bar ul {
+  display: flex;
+}
+.nav-bar a {
+  display: inline-block;
+  color: white;
+  border-radius: 50px;
+  padding: 15px 30px;
+  margin: 0 15px;
+  transition: 0.3s;
+}
+.nav-bar a:hover {
+  color: black;
+  background-color: white;
+  scale: 1.2;
+}
+.nav-bar a.active {
+  color: black;
+  background: white;
+}
+
+/* Reducing the padding of header when width is reduced. */
+@media only screen and (max-width: 1320px) {
+  header {
+    padding: 0 50px;
+  }
+}
+
+/* Reducing the padding of header again when width is reduced. */
+@media only screen and (max-width: 1100px) {
+  header {
+    padding: 0 25px;
+  }
+  .cover-items a {
+    transition: none !important;
+  }
+}
+
+/* Adjusting items positions to display correctly when width is significantly reduced. */
+@media only screen and (max-width: 900px) {
+  .cover {
+    background: black;
+  }
+  .cover-items {
+    padding-top: 25% !important;
+    position: static !important;
+    width: 60% !important;
+  }
+  .cover-items h1 {
+    font-size: 60px !important;
+  }
+  .cover-items p {
+    font-size: 14px !important;
+  }
+  .cover-items a {
+    font-size: 14px !important;
+    transition: none !important;
+  }
+  .material-symbols-outlined {
+    display: block !important;
+    cursor: pointer;
+    color: white;
+    background-color: black;
+    transition: 0.2s;
+    font-variation-settings: q "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 48;
+  }
+  .nav-bar {
+    height: 0px;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    right: 0;
+    width: 100vw;
+    background-color: black;
+    transition: 0.3s;
+    overflow: hidden;
+  }
+
+  .active-nav {
+    height: 450px;
+  }
+  .active-nav ul {
+    pointer-events: all !important;
+    opacity: 100% !important;
+  }
+  .active-nav li {
+    color: white;
+  }
+  .nav-bar ul {
+    pointer-events: none;
+    display: block;
+    width: fit-content;
+    margin: 25px auto 0 auto;
+    text-align: center;
+    transition: 0.5s;
+    opacity: 0;
+  }
+  .nav-links li {
+    padding: 10px;
+  }
+}
+
+/* Brings body down once user clicks the menu button at top when width is reduced. */
+.active-body {
+  padding-top: 450px;
+  transition: 0.3s;
+}
+
+/* Adjusts the rest of the sections of the webpage with even height and width according to user window screen attributes. */
+.alpha,
+.gamma {
+  padding: 135px;
+
+  display: flex;
+  flex-flow: column;
+  min-height: fit-content;
+}
+
+.title-page {
+  padding-top: 17%;
+  padding-left: 15%;
+  padding-right: 10%;
+  padding-bottom: 23%;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-flow: column;
+  min-height: fit-content;
+}
+/* The below CSS classes with .cover beginning is for the first cover/home page which user sees.
+      The classes also include changes to the items inside the div.*/
+
+.cover {
+  background: url("cover-page.webp") no-repeat center center;
+  background-color: black;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+.cover-items {
+  width: 50%;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  justify-content: space-between;
+}
+.cover-items h1 {
+  padding-bottom: 3px !important;
+  font-size: 100px;
+  padding-left: 0px !important;
+  color: white;
+}
+.cover-items p {
+  padding-top: 2px !important;
+  padding-left: 10px !important;
+  padding-bottom: 30px;
+  font-size: 22px;
+  text-align: left !important;
+}
+.cover-items a {
+  border: 2px solid;
+  margin-left: 10px !important;
+  padding: 20px;
+  font-size: 20px;
+  border-radius: 50px;
+  transition: 0.4s;
+  border-color: white;
+  color: white;
+  width: fit-content;
+  text-align: center;
+}
+.cover-items a:hover {
+  background-color: white;
+  scale: 1.1;
+  padding-left: 5%;
+  color: black;
+}
+
+.header-white {
+  background-color: black;
+  transition: 0.4s;
+}
+
+/* Making text visible for the black divs. */
+.gamma {
+  background-color: white;
+  color: black;
+}
+
+/* Making background red and foreground white for apha blocks*/
+.alpha {
+  background-color: whitesmoke;
+  color: red;
+}
+.spacer {
+  padding-top: 120px;
+  padding-bottom: 160px;
+}
+.divMapAndBar {
+  display: flex;
+
+  justify-content: space-around;
+}
+
+.item {
+  margin-right: 0px;
+  margin-left: 3%;
+  margin-bottom: 3%;
+  border: solid;
+  border-radius: 50px;
+  color: black;
+  width: 500px;
+}
+
+.map {
+  border: solid;
+  border-radius: 50px;
+  color: black;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.highlightArc {
+  fill: rgb(63, 0, 180) !important;
+
+  stroke: black;
+  opacity: 0.8 !important;
+  stroke-width: 2px;
+  transition: 0.4s;
+}
+
+.highlightArcStroke {
+  fill: none !important;
+
+  stroke: rgb(63, 0, 180);
+  opacity: 0.8 !important;
+  stroke-width: 8px;
+  scale:1.2;
+  transition: 0.4s;
+}
+
+.chartName{
+  color:black;
+  padding-bottom: 1%;
+  text-align: center;
+}
+
+.highlight {
+  fill: red !important;
+
+  stroke: black;
+  opacity: 0.8 !important;
+  stroke-width: 2px;
+  transition: 0.4s;
+}
+.headingText{
+  font-size: 30px;
+  font-weight: bolder;
+  text-align: center;
+  color:white;
+background-color: black;
+
+margin-bottom: 10px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-radius: 10px;
+}
+.continentAndCountry {
+  display: flex;
+  flex-direction: column;
+  width: min-content;
+  height: min-content;
+}
+.highlightHighCaseCountries {
+  stroke: black;
+  stroke-dasharray: 8;
+}
+.caseComparison {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.itemCaseComparisonTopBottom{
+
+  margin-right: 0px;
+  margin-left: 3%;
+  border: solid;
+  align-items: center;
+  border-radius: 50px;
+  color: black;
+}
+.itemCaseComparison {
+  margin-right: 0px;
+  margin-left: 3%;
+  margin-bottom: 3%;
+  border: solid;
+  align-items: center;
+  border-radius: 50px;
+  color: black;
+}
+.countryTip {
+  width: 85%;
+  align-items: center;
+  border-radius: 20px;
+}
+.toolTip {
+  width: 18%;
+  align-items: center;
+
+  border-radius: 20px;
+}
+.vaccineComparison {
+  margin-bottom: 20px;
+  border: solid;
+  justify-content: space-around;
+  border-radius: 50px;
+  color: black;
+}
+.divCompare {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.dataSelectionLink {
+  display: flex;
+  flex-direction: row;
+  padding: 12px 30px;
+  align-items: center;
+  padding-top: 5px;
+  padding-bottom: 30px;
+}
+.dataSelect {
+  display: inline-block;
+  align-items: center;
+  background-color: black;
+  color: white;
+  border-radius: 50px;
+  padding: 12px 30px;
+  margin: 0 10px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.increaseDecrease {
+  display: flex;
+  align-items: center;
+  background-color: black;
+  color: white;
+  border-radius: 50px;
+  padding: 25px 30px;
+  transition: 0.3s;
+  cursor: pointer;
+  margin-bottom: 8% !important;
+  margin-left: 20px;
+}
+
+.increaseDecreaseCountry a:hover {
+  color: white;
+  background-color: red;
+
+  scale: 1.1;
+}
+
+.dataSelectionLink a:hover {
+  color: white;
+  background-color: red;
+  scale: 1.1;
+}
+.comparisonContainer {
+  display: flex;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+.vaccinationStatus {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2%;
+}
+
+.vaccineContainer {
+  display: flex;
+  flex-direction: row;
+}
+
+.mainMapAndLock{
+display: flex;
+flex-direction: column;
+align-items:center;
+}
+
+.mapButtons{
+color: white;
+text-align: center;
+background-color: black;
+  border-radius: 50px;
+  padding: 15px 30px;
+  margin: 10px 15px;
+  transition: 0.3s;
+}
+.mainMapAndLock a:hover{
+  background-color: red;
+  cursor: pointer;
+}
+
+.highlightButton{
+  background-color: red;
+  cursor: pointer;
+}
