@@ -3,7 +3,7 @@
 
 This repository contains the source code for a COVID-19 Data Visualization Dashboard, a web application that visualizes the global impact and spread of the COVID-19 pandemic.
 
-You can view the live dashboard here -> https://heysachins.github.io/covid-19-dashboard/
+You can view the live dashboard here -> https://heysuryas.github.io/covid-19-dashboard/
 
 ## Project Overview
 
@@ -50,7 +50,7 @@ The COVID-19 Data Visualization Dashboard provides an interactive platform for e
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/heysachins/covid-19-dashboard.git
+   git clone https://github.com/heysuryas/covid-19-dashboard.git
    ```
 
 2. Navigate to the project directory:
